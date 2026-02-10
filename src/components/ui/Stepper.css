@@ -1,0 +1,109 @@
+.stepper-container {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+/* Connective Line Logic */
+.step-line {
+    position: absolute;
+    top: 1.25rem;
+    /* Half of circle height (2.5rem) */
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-border);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+/* Color the line if the step is completed */
+.step-item.completed .step-line {
+    background-color: var(--color-success);
+}
+
+/* Circle Style */
+.step-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border: 2px solid var(--color-border);
+    z-index: 10;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step-item.active .step-circle {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(0, 35, 102, 0.15);
+}
+
+.step-item.completed .step-circle {
+    background-color: var(--color-success);
+    color: white;
+    border-color: var(--color-success);
+}
+
+/* Label Style */
+.step-label {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 500;
+    text-align: center;
+    max-width: 120px;
+}
+
+.step-item.active .step-label {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.step-item.completed .step-label {
+    color: var(--color-success);
+}
+
+/* Hide line on the last item to prevent overflow */
+.step-item:last-child .step-line {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .step-label {
+        display: none;
+    }
+
+    .step-circle {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.875rem;
+    }
+
+    .step-line {
+        top: 1rem;
+    }
+}
