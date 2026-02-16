@@ -63,9 +63,10 @@ export default function Results({ data, calculations, onReset }) {
         <button onClick={handleSave} className="btn-action">
             <Save size={18} /> Guardar
         </button>
-        <button onClick={() => generatePDF(data, calculations)} className="btn-action primary">
+        <button onClick={() => generatePDF(data, calculations, trm)} className="btn-action primary">
             <Download size={18} /> Generar PDF
         </button>
+
         <button onClick={handleWhatsApp} className="btn-action whatsapp">
             <Share2 size={18} /> WhatsApp
         </button>
