@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import './Stepper.css';
 
-export default function Stepper({ currentStep, totalSteps, steps }) {
+export default function Stepper({ currentStep, steps }) {
   // steps is an array of labels, e.g. ["Datos", "Ingresos", "Deudas", "Educación", "Haberes"]
 
   return (

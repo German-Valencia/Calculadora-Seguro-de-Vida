@@ -78,7 +78,7 @@ function App() {
   return (
     <Layout>
       <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <Stepper currentStep={currentStep} totalSteps={steps.length} steps={steps} />
+        <Stepper currentStep={currentStep} steps={steps} />
         
         <div className="card">
           <h2 style={{marginTop: 0, marginBottom: '1.5rem'}}>{steps[currentStep - 1]}</h2>

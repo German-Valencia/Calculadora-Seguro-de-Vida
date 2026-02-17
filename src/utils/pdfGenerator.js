@@ -12,7 +12,7 @@ const loadImage = (url) => {
   });
 };
 
-export const generatePDF = async (data, calculations, trm = 4100) => {
+export const generatePDF = async (data, calculations, trm) => {
   const doc = new jsPDF();
 
   // Colors
